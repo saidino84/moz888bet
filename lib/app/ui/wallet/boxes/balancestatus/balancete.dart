@@ -9,8 +9,12 @@ class BalanceStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // height: 250,
+      constraints: BoxConstraints(maxHeight: 300, minHeight: 260),
+      // width: double.infinity,
       decoration: BoxDecoration(
-          color: WalletPalet.secondary, borderRadius: BorderRadius.circular(8)),
+          color: WalletPalet.yellowdown,
+          borderRadius: BorderRadius.circular(8)),
     );
   }
 }

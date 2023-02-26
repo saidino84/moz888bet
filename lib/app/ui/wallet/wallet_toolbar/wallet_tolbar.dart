@@ -11,7 +11,10 @@ class WalletAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: WalletPalet.darkcolor),
-      constraints: BoxConstraints(maxHeight: size.height * 0.1, minHeight: 60),
+      // constraints: BoxConstraints(maxHeight: size.height * 0.1, minHeight: 60),
+      // constraints: BoxConstraints(maxHeight: size.height * 0.1, minHeight: 60),
+      height: 60,
+
       child: Row(
         children: [
           Text(

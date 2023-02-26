@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moz888bet/app/ui/wallet/wallet_pallets.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -7,6 +8,10 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Drawer(
+      child: Column(
+        children: [Container(color: WalletPalet.bluedark)],
+      ),
+    );
   }
 }

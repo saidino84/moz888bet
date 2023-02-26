@@ -11,6 +11,7 @@ class ExchangeUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      constraints: BoxConstraints(maxHeight: 260, minHeight: 200),
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
           color: WalletPalet.secondary, borderRadius: BorderRadius.circular(8)),

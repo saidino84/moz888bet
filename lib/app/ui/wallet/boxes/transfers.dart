@@ -41,12 +41,12 @@ class TransfersUi extends StatelessWidget {
                 rows: List.generate(
                     8,
                     (index) => DataRow(
-                            selected: index == 2 ? true : false,
-                            onSelectChanged: (e) {
-                              print('Selected');
-                            },
+                            // selected: index == 2 ? true : false,
+                            // onSelectChanged: (e) {
+                            //   print('Selected');
+                            // },
                             cells: [
-                              DataCell(showEditIcon: true, Text('0$index')),
+                              DataCell(Text('0$index')),
                               DataCell(Text('${Random(4523).nextInt(7502)}')),
                               DataCell(Text(
                                   '${DateTime.now().day + Random(1).nextInt(30)}/${DateTime.now().month + index}/2023')),

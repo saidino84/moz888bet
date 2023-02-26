@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:moz888bet/app/ui/aviator/dashbord.dart';
-import 'package:moz888bet/app/ui/wallet/wallet.dart';
+import 'package:moz888bet/app/ui/responsive/desktop_layout.dart';
+import 'package:moz888bet/app/ui/responsive/mobile_layout.dart';
+import 'package:moz888bet/app/ui/responsive/tablet_layout.dart';
+import 'package:moz888bet/app/ui/responsive/responsive.dart';
 import 'package:moz888bet/app/ui/wallet/wallet_pallets.dart';
 
 void main(List<String> args) {
@@ -22,7 +23,11 @@ class Moz888Bet extends StatelessWidget {
               .copyWith(
                   bodyText1: TextStyle(color: WalletPalet.bodyTextcolor),
                   bodyText2: TextStyle(color: WalletPalet.bodyTextcolor))),
-      home: WalletPage(),
+      home: ResponsiveLayout(
+        mobile: MobileLayout(),
+        desktop: DesktopLayout(),
+        tablet: TabletLayout(),
+      ),
     );
   }
 }
