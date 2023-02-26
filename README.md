@@ -1,7 +1,6 @@
 # moz888bet
 Clone de Aviator Ui com Flutter Actualizado
 
-
-!()[main.jpeg]
+# Author: Saide Adamo (872988328)
 FIST STAGE
-!()[STAGE1.jpeg]
+![](STAGE1.jpeg)
