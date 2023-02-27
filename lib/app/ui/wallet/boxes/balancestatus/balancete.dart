@@ -13,8 +13,28 @@ class BalanceStatus extends StatelessWidget {
       constraints: BoxConstraints(maxHeight: 300, minHeight: 260),
       // width: double.infinity,
       decoration: BoxDecoration(
-          color: WalletPalet.yellowdown,
+          // color: WalletPalet.yellowdown,
           borderRadius: BorderRadius.circular(8)),
+      child: Column(
+        children: [
+          Container(
+            height: 35,
+            width: double.infinity,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color: WalletPalet.secondary,
+                borderRadius: BorderRadius.circular(10)),
+            child: Text('Your Storage Details'),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+              child: Container(
+            color: Colors.white12,
+          ))
+        ],
+      ),
     );
   }
 }
