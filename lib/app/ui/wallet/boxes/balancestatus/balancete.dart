@@ -23,7 +23,7 @@ class BalanceStatus extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: WalletPalet.secondary,
-                borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(8)),
             child: Text('Your Storage Details'),
           ),
           SizedBox(
@@ -31,8 +31,9 @@ class BalanceStatus extends StatelessWidget {
           ),
           Expanded(
               child: Container(
-            color: Colors.white12,
-          ))
+                  decoration: BoxDecoration(
+                      color: WalletPalet.secondary,
+                      borderRadius: BorderRadius.circular(8))))
         ],
       ),
     );
