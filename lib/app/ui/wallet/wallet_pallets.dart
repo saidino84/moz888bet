@@ -10,5 +10,5 @@ class WalletPalet {
   static final bluedark = Color(0xff0f2896);
   static final lightgray = Color(0xffc9cacf);
   static final bodyTextcolor = Color(0xff8b8b8d);
-  static final primaryColor = Color.fromARGB(0, 115, 177, 228);
+  static final primaryColor = Color(0xffad8820);
 }

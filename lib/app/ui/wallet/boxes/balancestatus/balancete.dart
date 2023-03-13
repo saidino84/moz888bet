@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:moz888bet/app/ui/wallet/components.dart';
 import 'package:moz888bet/app/ui/wallet/wallet_pallets.dart';
+
+import 'components.dart';
 
 class BalanceStatus extends StatelessWidget {
   const BalanceStatus({
@@ -10,7 +13,9 @@ class BalanceStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // height: 250,
-      constraints: BoxConstraints(maxHeight: 300, minHeight: 260),
+      constraints: BoxConstraints(
+          maxHeight: ResponsiveLayout.isMobile(context) ? 510 : 300,
+          minHeight: 260),
       // width: double.infinity,
       decoration: BoxDecoration(
           // color: WalletPalet.yellowdown,
@@ -30,10 +35,13 @@ class BalanceStatus extends StatelessWidget {
             height: 10,
           ),
           Expanded(
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: WalletPalet.secondary,
-                      borderRadius: BorderRadius.circular(8))))
+            child: Container(
+                decoration: BoxDecoration(
+                  color: WalletPalet.secondary,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Componets()),
+          )
         ],
       ),
     );

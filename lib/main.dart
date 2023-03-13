@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:moz888bet/app/bindings/app_bindings.dart';
 import 'package:moz888bet/app/ui/responsive/desktop_layout.dart';
 import 'package:moz888bet/app/ui/responsive/mobile_layout.dart';
 import 'package:moz888bet/app/ui/responsive/tablet_layout.dart';
@@ -12,7 +14,8 @@ void main(List<String> args) {
 class Moz888Bet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           primaryColor: WalletPalet.primaryColor,
           scaffoldBackgroundColor: WalletPalet.bgcolor,
@@ -23,11 +26,16 @@ class Moz888Bet extends StatelessWidget {
               .copyWith(
                   bodyText1: TextStyle(color: WalletPalet.bodyTextcolor),
                   bodyText2: TextStyle(color: WalletPalet.bodyTextcolor))),
-      home: ResponsiveLayout(
-        mobile: MobileLayout(),
-        desktop: DesktopLayout(),
-        tablet: TabletLayout(),
-      ),
+      getPages: [
+        GetPage(
+            page: () => ResponsiveLayout(
+                  mobile: MobileLayout(),
+                  desktop: DesktopLayout(),
+                  tablet: TabletLayout(),
+                ),
+            name: '/',
+            bindings: [AppBindings()]),
+      ],
     );
   }
 }

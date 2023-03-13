@@ -1,7 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:moz888bet/app/shared/constants.dart';
+import 'package:moz888bet/app/ui/responsive/responsive.dart';
+import 'package:moz888bet/app/ui/wallet/inputs/input_add.dart';
 import 'package:moz888bet/app/ui/wallet/wallet_pallets.dart';
+import 'package:moz888bet/app/ui/wallet/wallet_toolbar/components/search_input.dart';
 
 class TransfersUi extends StatelessWidget {
   const TransfersUi({
@@ -19,7 +24,19 @@ class TransfersUi extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('TRANSFERENCIAS '),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('TRANSFERENCIAS '),
+              ElevatedButton.icon(
+                onPressed: () {
+                  adicionarNovaTransferencia(context);
+                },
+                label: Text('Adicionar Novo'),
+                icon: Icon(Icons.add),
+              )
+            ],
+          ),
           SizedBox(
             width: double.infinity,
             child: DataTable(
@@ -75,5 +92,43 @@ class TransfersUi extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void adicionarNovaTransferencia(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    Get.defaultDialog(
+        title: 'NOW TRANSFER',
+        backgroundColor: WalletPalet.secondary,
+        content: Container(
+          height: size.height * 0.4,
+          width: size.width * 0.5,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SearchInput(),
+                if (!ResponsiveLayout.isMobile(context))
+                  Container(
+                    height: 100,
+                    child: Row(
+                      children: [
+                        Expanded(child: AddInput()),
+                        Expanded(child: AddInput()),
+                      ],
+                    ),
+                  ),
+                if (ResponsiveLayout.isMobile(context)) AddInput(),
+                AddInput(),
+              ],
+            ),
+          ),
+        ),
+        radius: defaultBorderRadius / 2,
+        // actions: [
+        //   ElevatedButton(onPressed: () {}, child: Text('Salvar')),
+        //   ElevatedButton(onPressed: () {}, child: Text('Descartar')),
+        // ],
+        confirm: Text('Salvar'),
+        // cancel: Text('Descartar')
+        textConfirm: 'Save it');
   }
 }

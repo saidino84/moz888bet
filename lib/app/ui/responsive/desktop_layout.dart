@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moz888bet/app/ui/wallet/boxes/balancestatus/balancete.dart';
 import 'package:moz888bet/app/ui/wallet/boxes/exchange/exchangeui.dart';
+import 'package:moz888bet/app/ui/sidemenu/side_menu/side_menu.dart';
 
 import '../wallet/components.dart';
 

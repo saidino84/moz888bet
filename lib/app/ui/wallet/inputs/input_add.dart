@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:moz888bet/app/shared/constants.dart';
 
-class MyInput extends StatelessWidget {
-  const MyInput({Key? key, this.controller}) : super(key: key);
+class AddInput extends StatelessWidget {
+  const AddInput({Key? key, this.controller}) : super(key: key);
   final TextEditingController? controller;
 
   @override
@@ -16,6 +17,18 @@ class MyInput extends StatelessWidget {
           borderRadius: BorderRadius.circular(8)),
       child: Row(
         children: [
+          Container(
+            width: 100,
+            padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            // color: Colors.black12,
+            decoration: BoxDecoration(
+              border: Border(right: BorderSide(color: Colors.white12)),
+            ),
+            child: Text('Titulo'),
+          ),
+          Divider(
+            color: Colors.red,
+          ),
           Expanded(
               child: Padding(
             padding: const EdgeInsets.only(left: 8.0),
@@ -38,15 +51,6 @@ class MyInput extends StatelessWidget {
               ),
             ),
           )),
-          Divider(
-            color: Colors.red,
-          ),
-          Container(
-              width: 60,
-              // child: Text('ADD'),
-              // color: Colors.black12,
-              decoration: BoxDecoration(
-                  border: Border(left: BorderSide(color: Colors.white12))))
         ],
       ),
     );
